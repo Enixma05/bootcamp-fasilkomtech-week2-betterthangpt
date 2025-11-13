@@ -1,0 +1,879 @@
+/* Greek Mountain Village Theme Color Palette */
+:root {
+    /* Light Mode Colors */
+    --sky-blue: #87CEEB;
+    --deep-blue: #1e40af;
+    --white-house: #FEFEFE;
+    --terracotta: #E07A5F;
+    --warm-orange: #F4A261;
+    --gold: #f59e0b;
+    --light-gold: #fbbf24;
+    --cream: #fefce8;
+    --stone-gray: #8B8680;
+    --dark-gray: #1f2937;
+    --shadow: rgba(0, 0, 0, 0.15);
+    --mountain-gray: #5a6a7a;
+    
+    /* Background Gradients */
+    --bg-gradient-1: #87CEEB;
+    --bg-gradient-2: #B0D4E8;
+    --bg-gradient-3: #D4E8F0;
+    --bg-gradient-4: #E8F0F7;
+}
+
+/* Dark Mode Colors */
+body.dark-mode {
+    --sky-blue: #0f172a;
+    --deep-blue: #3b82f6;
+    --white-house: #1e293b;
+    --terracotta: #f97316;
+    --warm-orange: #fb923c;
+    --gold: #fbbf24;
+    --light-gold: #fde047;
+    --cream: #334155;
+    --stone-gray: #94a3b8;
+    --dark-gray: #f1f5f9;
+    --shadow: rgba(0, 0, 0, 0.5);
+    --mountain-gray: #1e293b;
+    
+    /* Dark Background Gradients */
+    --bg-gradient-1: #0f172a;
+    --bg-gradient-2: #1e293b;
+    --bg-gradient-3: #334155;
+    --bg-gradient-4: #475569;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, 
+        var(--bg-gradient-1) 0%, 
+        var(--bg-gradient-2) 40%,
+        var(--bg-gradient-3) 70%,
+        var(--bg-gradient-4) 100%
+    );
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    transition: background 0.5s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--terracotta), var(--warm-orange));
+    border: 3px solid var(--gold);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 20px var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 6px 30px rgba(251, 191, 36, 0.5);
+}
+
+.theme-toggle .moon-icon {
+    display: none;
+}
+
+body.dark-mode .theme-toggle .sun-icon {
+    display: none;
+}
+
+body.dark-mode .theme-toggle .moon-icon {
+    display: inline;
+}
+
+/* Mount Olympus - Home of the Gods */
+.olympus-mountain {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 500px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.olympus-peak {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 300px solid transparent;
+    border-right: 300px solid transparent;
+    border-bottom: 400px solid var(--mountain-gray);
+    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.3));
+    transition: border-bottom-color 0.5s ease;
+}
+
+body.dark-mode .olympus-peak {
+    border-bottom-color: #0f172a;
+    filter: drop-shadow(0 0 50px rgba(59, 130, 246, 0.3));
+}
+
+/* Temple on Olympus */
+.olympus-temple {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.temple-roof {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 40px solid var(--gold);
+    margin-bottom: -5px;
+    filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.5));
+    transition: border-bottom-color 0.5s ease;
+}
+
+body.dark-mode .temple-roof {
+    filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.8));
+}
+
+.temple-columns {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.column {
+    width: 15px;
+    height: 80px;
+    background: linear-gradient(to bottom, var(--white-house), #e0e0e0);
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.5s ease;
+}
+
+body.dark-mode .column {
+    background: linear-gradient(to bottom, #94a3b8, #64748b);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* Lightning Effects */
+.lightning {
+    position: absolute;
+    width: 3px;
+    height: 150px;
+    background: linear-gradient(to bottom, 
+        transparent 0%,
+        #fbbf24 20%,
+        #ffffff 50%,
+        #fbbf24 80%,
+        transparent 100%
+    );
+    opacity: 0;
+    animation: lightning 4s infinite;
+    box-shadow: 0 0 20px #fbbf24;
+}
+
+#lightning1 {
+    top: 0;
+    left: 30%;
+    animation-delay: 0s;
+}
+
+#lightning2 {
+    top: 0;
+    right: 30%;
+    animation-delay: 2s;
+}
+
+body.dark-mode .lightning {
+    animation: lightning 3s infinite;
+}
+
+@keyframes lightning {
+    0%, 90%, 92%, 94%, 100% {
+        opacity: 0;
+    }
+    91%, 93% {
+        opacity: 1;
+    }
+}
+
+/* Background Mountains */
+body::before {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40vh;
+    background: 
+        linear-gradient(to bottom, transparent 0%, rgba(90, 106, 122, 0.3) 100%),
+        repeating-linear-gradient(
+            120deg,
+            #5a6a7a 0px,
+            #6b7b8a 100px,
+            #5a6a7a 200px,
+            #4a5a6a 300px
+        );
+    clip-path: polygon(
+        0% 100%, 
+        0% 60%,
+        10% 70%,
+        20% 50%,
+        30% 65%,
+        40% 45%,
+        50% 55%,
+        60% 40%,
+        70% 60%,
+        80% 50%,
+        90% 65%,
+        100% 55%,
+        100% 100%
+    );
+    z-index: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+body.dark-mode::before {
+    background: 
+        linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.8) 100%),
+        repeating-linear-gradient(
+            120deg,
+            #0f172a 0px,
+            #1e293b 100px,
+            #0f172a 200px,
+            #020617 300px
+        );
+}
+
+/* Background Houses */
+body::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    background-image: 
+        /* Rumah 1 */
+        radial-gradient(circle at 10% 85%, var(--white-house) 3%, transparent 3%),
+        radial-gradient(circle at 10% 92%, var(--white-house) 4%, transparent 4%),
+        /* Rumah 2 */
+        radial-gradient(circle at 25% 88%, #F0E6D2 3.5%, transparent 3.5%),
+        radial-gradient(circle at 25% 95%, #F0E6D2 4.5%, transparent 4.5%),
+        /* Rumah 3 */
+        radial-gradient(circle at 40% 86%, var(--white-house) 3%, transparent 3%),
+        radial-gradient(circle at 40% 93%, var(--white-house) 4%, transparent 4%),
+        /* Rumah 4 */
+        radial-gradient(circle at 60% 89%, #F0E6D2 3.5%, transparent 3.5%),
+        radial-gradient(circle at 60% 96%, #F0E6D2 4.5%, transparent 4.5%),
+        /* Rumah 5 */
+        radial-gradient(circle at 75% 87%, var(--white-house) 3%, transparent 3%),
+        radial-gradient(circle at 75% 94%, var(--white-house) 4%, transparent 4%),
+        /* Rumah 6 */
+        radial-gradient(circle at 90% 90%, #F0E6D2 3.5%, transparent 3.5%),
+        radial-gradient(circle at 90% 97%, #F0E6D2 4.5%, transparent 4.5%);
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+body.dark-mode::after {
+    background-image: 
+        /* Rumah 1 - dengan cahaya jendela */
+        radial-gradient(circle at 10% 85%, #1e293b 3%, transparent 3%),
+        radial-gradient(circle at 10% 92%, #1e293b 4%, transparent 4%),
+        radial-gradient(circle at 10% 87%, #fbbf24 0.5%, transparent 0.5%),
+        /* Rumah 2 */
+        radial-gradient(circle at 25% 88%, #334155 3.5%, transparent 3.5%),
+        radial-gradient(circle at 25% 95%, #334155 4.5%, transparent 4.5%),
+        radial-gradient(circle at 25% 90%, #fbbf24 0.5%, transparent 0.5%),
+        /* Rumah 3 */
+        radial-gradient(circle at 40% 86%, #1e293b 3%, transparent 3%),
+        radial-gradient(circle at 40% 93%, #1e293b 4%, transparent 4%),
+        radial-gradient(circle at 40% 88%, #fbbf24 0.5%, transparent 0.5%),
+        /* Rumah 4 */
+        radial-gradient(circle at 60% 89%, #334155 3.5%, transparent 3.5%),
+        radial-gradient(circle at 60% 96%, #334155 4.5%, transparent 4.5%),
+        radial-gradient(circle at 60% 91%, #fbbf24 0.5%, transparent 0.5%),
+        /* Rumah 5 */
+        radial-gradient(circle at 75% 87%, #1e293b 3%, transparent 3%),
+        radial-gradient(circle at 75% 94%, #1e293b 4%, transparent 4%),
+        radial-gradient(circle at 75% 89%, #fbbf24 0.5%, transparent 0.5%),
+        /* Rumah 6 */
+        radial-gradient(circle at 90% 90%, #334155 3.5%, transparent 3.5%),
+        radial-gradient(circle at 90% 97%, #334155 4.5%, transparent 4.5%),
+        radial-gradient(circle at 90% 92%, #fbbf24 0.5%, transparent 0.5%);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(135deg, var(--white-house), #F8F8F8);
+    border-radius: 20px 20px 0 0;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 10px 40px var(--shadow),
+        inset 0 -5px 10px rgba(224, 122, 95, 0.2);
+    margin-bottom: 30px;
+    border-bottom: 6px solid var(--terracotta);
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .header {
+    background: linear-gradient(135deg, var(--white-house), #0f172a);
+    box-shadow: 
+        0 10px 40px var(--shadow),
+        inset 0 -5px 10px rgba(251, 191, 36, 0.2);
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.greek-icon {
+    font-size: 48px;
+    color: var(--deep-blue);
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: color 0.5s ease;
+}
+
+body.dark-mode .greek-icon {
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+}
+
+.header h1 {
+    color: var(--deep-blue);
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .header h1 {
+    color: var(--dark-gray);
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.tagline {
+    color: var(--terracotta);
+    font-size: 18px;
+    font-style: italic;
+    letter-spacing: 1px;
+    transition: color 0.5s ease;
+}
+
+body.dark-mode .tagline {
+    color: var(--warm-orange);
+}
+
+.greek-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 50px,
+            rgba(30, 64, 175, 0.03) 50px,
+            rgba(30, 64, 175, 0.03) 100px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 50px,
+            rgba(224, 122, 95, 0.02) 50px,
+            rgba(224, 122, 95, 0.02) 100px
+        );
+    pointer-events: none;
+}
+
+/* Main Content */
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Chat Container */
+.chat-container {
+    background: var(--white-house);
+    border-radius: 20px;
+    box-shadow: 
+        0 10px 40px var(--shadow),
+        inset 0 0 20px rgba(30, 64, 175, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    border: 3px solid rgba(224, 122, 95, 0.3);
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .chat-container {
+    border-color: rgba(251, 191, 36, 0.3);
+    box-shadow: 
+        0 10px 40px var(--shadow),
+        0 0 30px rgba(59, 130, 246, 0.1);
+}
+
+.chat-header {
+    background: linear-gradient(135deg, var(--deep-blue), #3b82f6);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 4px solid var(--terracotta);
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .chat-header {
+    background: linear-gradient(135deg, #1e293b, var(--deep-blue));
+    border-bottom-color: var(--gold);
+}
+
+.bot-avatar {
+    width: 50px;
+    height: 50px;
+    background: var(--warm-orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--white-house);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--light-gold);
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .bot-avatar {
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+}
+
+.bot-info h2 {
+    color: var(--white-house);
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+body.dark-mode .bot-info h2 {
+    color: var(--dark-gray);
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--cream);
+    font-size: 14px;
+    transition: color 0.5s ease;
+}
+
+body.dark-mode .status {
+    color: var(--stone-gray);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--light-gold);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Chat Messages */
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+    transition: background 0.5s ease;
+}
+
+body.dark-mode .chat-messages {
+    background: linear-gradient(to bottom, #0f172a 0%, #1e293b 100%);
+}
+
+.message {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.bot-message .message-avatar {
+    background: var(--warm-orange);
+    color: var(--white-house);
+    font-size: 18px;
+    border: 2px solid var(--gold);
+    transition: all 0.5s ease;
+}
+
+.user-avatar {
+    background: var(--deep-blue);
+    color: var(--white-house);
+    font-size: 12px;
+    transition: all 0.5s ease;
+}
+
+.message-content {
+    max-width: 70%;
+}
+
+.message-content p {
+    background: var(--white-house);
+    padding: 15px;
+    border-radius: 15px;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    box-shadow: 0 2px 8px var(--shadow);
+    border: 1px solid rgba(224, 122, 95, 0.2);
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .message-content p {
+    background: #0f172a;
+    color: var(--dark-gray);
+    border-color: rgba(251, 191, 36, 0.2);
+}
+
+.bot-message .message-content p {
+    border-bottom-left-radius: 5px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+body.dark-mode .bot-message .message-content p {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+.user-message {
+    flex-direction: row-reverse;
+}
+
+.user-message .message-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.user-message .message-content p {
+    background: linear-gradient(135deg, var(--deep-blue), #3b82f6);
+    color: var(--white-house);
+    border-bottom-right-radius: 5px;
+    border: none;
+}
+
+.message-time {
+    display: block;
+    font-size: 11px;
+    color: var(--stone-gray);
+    margin-top: 5px;
+    padding: 0 5px;
+    transition: color 0.5s ease;
+}
+
+/* Quick Suggestions */
+.quick-suggestions {
+    display: flex;
+    gap: 10px;
+    padding: 15px 20px;
+    background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+    border-top: 1px solid rgba(224, 122, 95, 0.2);
+    flex-wrap: wrap;
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .quick-suggestions {
+    background: linear-gradient(to bottom, #1e293b, #0f172a);
+    border-top-color: rgba(251, 191, 36, 0.2);
+}
+
+.suggestion-btn {
+    background: var(--cream);
+    border: 2px solid var(--terracotta);
+    color: var(--deep-blue);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.suggestion-btn:hover {
+    background: var(--terracotta);
+    color: var(--white-house);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(224, 122, 95, 0.4);
+}
+
+body.dark-mode .suggestion-btn:hover {
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+}
+
+/* Chat Input */
+.chat-input-container {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    background: var(--white-house);
+    border-top: 1px solid rgba(224, 122, 95, 0.2);
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .chat-input-container {
+    border-top-color: rgba(251, 191, 36, 0.2);
+}
+
+.chat-input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid var(--terracotta);
+    border-radius: 25px;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    background: var(--white-house);
+    color: var(--dark-gray);
+}
+
+body.dark-mode .chat-input {
+    background: #0f172a;
+    border-color: var(--gold);
+    color: var(--dark-gray);
+}
+
+.chat-input:focus {
+    border-color: var(--deep-blue);
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+body.dark-mode .chat-input:focus {
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
+}
+
+.send-btn {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--terracotta), var(--warm-orange));
+    border: none;
+    border-radius: 50%;
+    color: var(--white-house);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(224, 122, 95, 0.3);
+}
+
+.send-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(224, 122, 95, 0.5);
+}
+
+body.dark-mode .send-btn:hover {
+    box-shadow: 0 6px 16px rgba(251, 191, 36, 0.5);
+}
+
+.send-btn:active {
+    transform: scale(0.95);
+}
+
+/* Info Panel */
+.info-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    background: linear-gradient(135deg, var(--white-house), #F8F8F8);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px var(--shadow);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    border-top: 6px solid var(--terracotta);
+}
+
+body.dark-mode .info-card {
+    background: linear-gradient(135deg, var(--white-house), #0f172a);
+    border-top-color: var(--gold);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--warm-orange);
+    box-shadow: 0 15px 50px rgba(224, 122, 95, 0.3);
+}
+
+body.dark-mode .info-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 15px 50px rgba(251, 191, 36, 0.2);
+}
+
+.info-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.info-card h3 {
+    color: var(--deep-blue);
+    font-size: 20px;
+    margin-bottom: 10px;
+    transition: color 0.5s ease;
+}
+
+body.dark-mode .info-card h3 {
+    color: var(--dark-gray);
+}
+
+.info-card p {
+    color: var(--stone-gray);
+    line-height: 1.6;
+    font-size: 14px;
+    transition: color 0.5s ease;
+}
+
+/* Footer */
+.footer {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid rgba(224, 122, 95, 0.3);
+    box-shadow: 0 5px 20px var(--shadow);
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .footer {
+    background: rgba(30, 41, 59, 0.9);
+    border-color: rgba(251, 191, 36, 0.3);
+}
+
+.footer p {
+    color: var(--deep-blue);
+    font-style: italic;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: color 0.5s ease;
+}
+
+body.dark-mode .footer p {
+    color: var(--dark-gray);
+}
+
+/* Particles Effect */
+.particle {
+    position: fixed;
+    bottom: -10px;
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: float 5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 5;
+    box-shadow: 0 0 10px var(--gold);
+}
+
+body.dark-mode .particle {
+    box-shadow: 0 0 15px var(--gold);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
