@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aporia - Greek Philosophy Assistant</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Toggle Dark Mode Button -->
+    <button class="theme-toggle" id="themeToggle">
+        <span class="sun-icon">☀️</span>
+        <span class="moon-icon">🌙</span>
+    </button>
+
+    <!-- Mount Olympus -->
+    <div class="olympus-mountain">
+        <div class="olympus-peak"></div>
+        <div class="olympus-temple">
+            <div class="temple-columns">
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+            </div>
+            <div class="temple-roof"></div>
+        </div>
+        <div class="lightning" id="lightning1"></div>
+        <div class="lightning" id="lightning2"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="greek-icon">Φ</span>
+                    <h1>APORIA</h1>
+                </div>
+                <p class="tagline">Your Greek Philosophy Assistant</p>
+            </div>
+            <div class="greek-pattern"></div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Chat Container -->
+            <div class="chat-container">
+                <div class="chat-header">
+                    <div class="bot-avatar">
+                        <span>Α</span>
+                    </div>
+                    <div class="bot-info">
+                        <h2>Aporia</h2>
+                        <span class="status">
+                            <span class="status-dot"></span>
+                            Online
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Chat Messages -->
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">
+                        <div class="message-avatar">Α</div>
+                        <div class="message-content">
+                            <p>Χαίρετε! (Greetings!) Saya Aporia, asisten filosofi Yunani Anda. Saya dapat membantu Anda mempelajari tentang filsafat Yunani kuno, para filosof terkenal, dan konsep-konsep filosofis. Apa yang ingin Anda ketahui hari ini?</p>
+                            <span class="message-time">Baru saja</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Suggestions - SELALU TAMPIL -->
+                <div class="quick-suggestions" id="quickSuggestions">
+                    <button class="suggestion-btn" data-message="Siapa itu Socrates?">🏛️ Socrates</button>
+                    <button class="suggestion-btn" data-message="Ceritakan tentang Plato">📚 Plato</button>
+                    <button class="suggestion-btn" data-message="Ceritakan tentang Athena">🏺 Athena</button>
+                    <button class="suggestion-btn" data-message="Ceritakan tentang Zeus">⚡ Zeus</button>
+                    <button class="suggestion-btn" data-message="Apa itu Gunung Olympus?">🏔️ Olympus</button>
+                    <button class="suggestion-btn" data-message="Ceritakan tentang para dewa">✨ Para Dewa</button>
+                </div>
+
+                <!-- Chat Input -->
+                <div class="chat-input-container">
+                    <input 
+                        type="text" 
+                        class="chat-input" 
+                        id="chatInput" 
+                        placeholder="Ketik pertanyaan Anda..."
+                        autocomplete="off"
+                    >
+                    <button class="send-btn" id="sendBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 8L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Info Panel -->
+            <div class="info-panel">
+                <div class="info-card">
+                    <div class="info-icon">🏛️</div>
+                    <h3>Filosofi Yunani</h3>
+                    <p>Jelajahi pemikiran para filosof besar seperti Socrates, Plato, dan Aristoteles</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📜</div>
+                    <h3>Kebijaksanaan Kuno</h3>
+                    <p>Pelajari konsep-konsep filosofis yang masih relevan hingga kini</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">⚡</div>
+                    <h3>Tanya Apapun</h3>
+                    <p>Aporia siap menjawab pertanyaan Anda tentang dunia Yunani kuno</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Γνῶθι σεαυτόν (Know Thyself) - Prasasti di Kuil Apollo, Delphi</p>
+        </footer>
+    </div>
+
+    <script src="Js/script.js"></script>
+</body>
+</html>
