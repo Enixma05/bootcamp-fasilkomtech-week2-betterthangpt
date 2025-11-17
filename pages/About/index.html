@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+
+    <nav class="nav-container">
+        <div class="nav-nama">
+            APORIA — Your Greek Philosophy Assistant
+        </div>
+
+        <div class="nav-links">
+            <a href="">Home</a>
+            <a href="../../index.html">Chat</a>
+            <a href="index.html">About Us</a>
+        </div>
+    </nav>
+    
     <!-- Toggle Dark Mode Button -->
     <button class="theme-toggle" id="themeToggle">
         <span class="sun-icon">☀️</span>
@@ -30,99 +43,96 @@
     </div>
 
     <div class="container">
-        <!-- Header -->
         <header class="header">
             <div class="header-content">
                 <div class="logo">
                     <span class="greek-icon">Φ</span>
                     <h1>APORIA</h1>
                 </div>
-                <p class="tagline">Your Greek Philosophy Assistant</p>
             </div>
             <div class="greek-pattern"></div>
         </header>
 
         <!-- Main Content -->
-        <main class="main-content">
-            <!-- Chat Container -->
-            <div class="chat-container">
-                <div class="chat-header">
-                    <div class="bot-avatar">
-                        <span>Α</span>
+        <main class="about-content">
+
+            <section class="team-section">
+                <h2 class="team-title">Our Team</h2>
+
+                <div class="team-cards">
+
+                    <!-- Member 1 -->
+                    <div class="team-card">
+                        <img src="../../images/member1.jpg" alt="Member 1" class="team-photo">
+                        <h3>Rakasya Yoga</h3>
+                        <p class="team-role">Backend & AI Engineer</p>
+                        <p class="team-desc">
+                            Fokus pada machine learning, sistem backend, dan integrasi model AI.
+                            Memiliki pengalaman membangun pipeline data, API, dan sistem arsitektur modern.
+                        </p>
                     </div>
-                    <div class="bot-info">
-                        <h2>Aporia</h2>
-                        <span class="status">
-                            <span class="status-dot"></span>
-                            Online
-                        </span>
+
+                    <!-- Member 2 -->
+                    <div class="team-card">
+                        <img src="../../images/member2.jpg" alt="Member 2" class="team-photo">
+                        <h3>Rekan 2</h3>
+                        <p class="team-role">Frontend & UI/UX Designer</p>
+                        <p class="team-desc">
+                            Merancang pengalaman pengguna yang elegan dan intuitif.
+                            Menggabungkan estetika modern dengan struktur UI yang bersih.
+                        </p>
                     </div>
-                </div>
 
-                <!-- Chat Messages -->
-                <div class="chat-messages" id="chatMessages">
-                    <div class="message bot-message">
-                        <div class="message-avatar">Α</div>
-                        <div class="message-content">
-                            <p>Χαίρετε! (Greetings!) Saya Aporia, asisten filosofi Yunani Anda. Saya dapat membantu Anda mempelajari tentang filsafat Yunani kuno, para filosof terkenal, dan konsep-konsep filosofis. Apa yang ingin Anda ketahui hari ini?</p>
-                            <span class="message-time">Baru saja</span>
-                        </div>
+                    <!-- Member 3 -->
+                    <div class="team-card">
+                        <img src="../../images/member3.jpg" alt="Member 3" class="team-photo">
+                        <h3>Rekan 3</h3>
+                        <p class="team-role">Content & Research Analyst</p>
+                        <p class="team-desc">
+                            Mengembangkan konten filosofis, riset konsep, dan memastikan akurasi
+                            sejarah serta teori yang disajikan dalam platform Aporia.
+                        </p>
                     </div>
-                </div>
 
-                <!-- Quick Suggestions - SELALU TAMPIL -->
-                <div class="quick-suggestions" id="quickSuggestions">
-                    <button class="suggestion-btn" data-message="Siapa itu Socrates?">🏛️ Socrates</button>
-                    <button class="suggestion-btn" data-message="Ceritakan tentang Plato">📚 Plato</button>
-                    <button class="suggestion-btn" data-message="Ceritakan tentang Athena">🏺 Athena</button>
-                    <button class="suggestion-btn" data-message="Ceritakan tentang Zeus">⚡ Zeus</button>
-                    <button class="suggestion-btn" data-message="Apa itu Gunung Olympus?">🏔️ Olympus</button>
-                    <button class="suggestion-btn" data-message="Ceritakan tentang para dewa">✨ Para Dewa</button>
                 </div>
+            </section>
 
-                <!-- Chat Input -->
-                <div class="chat-input-container">
-                    <input 
-                        type="text" 
-                        class="chat-input" 
-                        id="chatInput" 
-                        placeholder="Ketik pertanyaan Anda..."
-                        autocomplete="off"
-                    >
-                    <button class="send-btn" id="sendBtn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 8L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Info Panel -->
-            <div class="info-panel">
-                <div class="info-card">
-                    <div class="info-icon">🏛️</div>
-                    <h3>Filosofi Yunani</h3>
-                    <p>Jelajahi pemikiran para filosof besar seperti Socrates, Plato, dan Aristoteles</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">📜</div>
-                    <h3>Kebijaksanaan Kuno</h3>
-                    <p>Pelajari konsep-konsep filosofis yang masih relevan hingga kini</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">⚡</div>
-                    <h3>Tanya Apapun</h3>
-                    <p>Aporia siap menjawab pertanyaan Anda tentang dunia Yunani kuno</p>
-                </div>
-            </div>
         </main>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>Γνῶθι σεαυτόν (Know Thyself) - Prasasti di Kuil Apollo, Delphi</p>
-        </footer>
     </div>
 
-    <script src="Js/script.js"></script>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section desc">
+                    <h3>Tentang Kami</h3>
+                    <p>Aporia adalah platform pembelajaran yang menghadirkan filosofi Yunani kuno secara sederhana dan mudah dipahami. Kami mengeksplorasi pemikiran para tokoh besar seperti Socrates, Plato, dan Aristoteles, serta menghadirkan kebijaksanaan klasik yang tetap relevan hingga masa kini. Melalui penjelasan ringan dan sesi tanya jawab, Aporia membantu Anda memahami konsep filosofis dan nilai-nilai kuno yang memperkaya cara pandang hidup.</p>
+                </div>
+            
+                <div class="footer-section">
+                    <h3>Sosial Media</h3>
+                    <div class="social-icons">
+                        <a href="#">🌐 Facebook</a><br>
+                        <a href="#">📷 Instagram</a><br>
+                        <a href="#">🐦 Twitter</a>
+                    </div>
+                </div>
+            
+                <div class="footer-section">
+                    <h3>Site Links</h3>
+                    <a href="#">Home</a><br>
+                    <a href="index.html">About</a><br>
+                    <a href="../../index.html">Chat</a><br>
+                    <a href="#">Contact</a><br>
+                    <a href="#">Services</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 APORIA - Your Greek Philosophy Assistant. All Rights Reserved.
+            </div>
+        </footer>
+
+    <script src="../../Js/script.js"></script>
 </body>
 </html>
