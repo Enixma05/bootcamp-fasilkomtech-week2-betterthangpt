@@ -7,8 +7,10 @@ const themeToggle = document.getElementById('themeToggle');
 let messageCount = 0;
 let isLoading = false;
 
-// ⚠️ GANTI API KEY INI DENGAN YANG BARU!
-const GEMINI_API_KEY = 'AIzaSyCPoMoosRbfEdrusWTjCEqyTGJCsQaZWbY';
+import { GEMINI_API_KEY } from "./apikey.js";
+
+// const GEMINI_API_KEY = 'YOUR_API_KEY_HERE';
+
 // const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
