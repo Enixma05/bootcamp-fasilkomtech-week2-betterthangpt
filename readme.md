@@ -6,6 +6,8 @@ Aporia adalah sebuah **web-based chatbot** bertema filsafat Yunani yang dibangun
 
 Website juga memiliki elemen visual tematik seperti Gunung Olympus, animasi awan, partikel, dark mode toggle, dan halaman pendukung (Home & About). Fokus utama proyek ini adalah **fitur chat AI**, bukan hanya landing page.
 
+Akses web kami di :  [https://aporia-betterthangpt.netlify.app/](https://aporia-betterthangpt.netlify.app/) 
+
 ---
 
 ## ✨ Fitur Utama Chatbot
